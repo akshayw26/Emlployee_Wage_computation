@@ -12,15 +12,19 @@ public class EmployeeWage {
         int empPresent = (int)Math.floor(Math.random() * 10) % 3;
 
         int empWage = 0;
-        
-        if(empPresent == 1) {
-            empWage = WAGE_PER_HOUR * FULL_DAY_HOUR;
-            System.out.println("Employee is Present as Full Time");
-        }else if(empPresent == 2){
-            System.out.println("Employee is Present as Part Time");
-            empWage = WAGE_PER_HOUR * PART_TIME_HOUR;
-        }else
-            System.out.println("Employee is absent");
+
+        switch(empPresent){
+            case 1:
+                empWage = WAGE_PER_HOUR * FULL_DAY_HOUR;
+                System.out.println("Employee is Present as Full Time");
+                break;
+            case 2:
+                System.out.println("Employee is Present as Part Time");
+                empWage = WAGE_PER_HOUR * PART_TIME_HOUR;
+                break;
+            default:
+                System.out.println("Employee is absent");
+        }
 
         System.out.println("Employee Daily Wage => " +empWage);
     }
